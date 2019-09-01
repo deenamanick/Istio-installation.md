@@ -1,3 +1,4 @@
+Please make sure that you are already running kuberenets cluster 
 
 ## Install and setup Helm Package Manager
 
