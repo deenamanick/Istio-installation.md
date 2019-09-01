@@ -33,3 +33,12 @@ cd istio-1.3.0-rc.1
 helm template install/kubernetes/helm/istio --name istio --namespace istio-system --set sidecarInjectorWebhook.enabled=false > $HOME/istio.yaml
 
 ```
+## create ns for istio
+
+```
+kubectl create namespace istio-system
+```
+## Install Istio
+```
+kubectl apply -f $HOME/istio.yaml 
+```
