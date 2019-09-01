@@ -44,3 +44,8 @@ kubectl create namespace istio-system
 ```
 kubectl apply -f $HOME/istio.yaml 
 ```
+## Verification
+```
+kubectl get pods -n istio-system
+
+```
