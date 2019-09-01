@@ -1,4 +1,5 @@
-Please make sure that you are already running kuberenets cluster 
+
+Note: This document does not talk about kubernetes cluster. so, Before starting the Istio installation, please make sure that kuberentes cluster is up and running.
 
 ## Install and setup Helm Package Manager
 
