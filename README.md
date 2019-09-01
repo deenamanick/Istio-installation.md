@@ -1,5 +1,5 @@
 
-Note: This document does not talk about kubernetes cluster. so, Before starting the Istio installation, please make sure that kuberentes cluster is up and running.
+Note: Istio requires a running kubernetes cluster and helm. If you don't already have a running Kubernetes cluster, check out the minikube install guide.
 
 ## Install and setup Helm Package Manager
 
