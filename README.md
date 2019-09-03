@@ -29,27 +29,15 @@ helm install install/kubernetes/helm/istio-init --name istio-init --namespace is
 
 ```
 
-```
-##  Cd to downloaded istio directory and create a template using helm
+##  Cd to downloaded istio directory and create install istio
 
 ```
-cd istio-1.3.0-rc.1
-
-helm template install/kubernetes/helm/istio --name istio --namespace istio-system --set sidecarInjectorWebhook.enabled=false > $HOME/istio.yaml
-
+cd istio-*
 
 helm install install/kubernetes/helm/istio --name istio --namespace istio-system --set global.configValidation=false --set sidecarInjectorWebhook.enabled=false --set grafana.enabled=true --set servicegraph.enabled=true
 
 ```
-## create ns for istio
 
-```
-kubectl create namespace istio-system
-```
-## Install Istio
-```
-kubectl apply -f $HOME/istio.yaml 
-```
 ## Verification
 ```
 kubectl get pods -n istio-system
