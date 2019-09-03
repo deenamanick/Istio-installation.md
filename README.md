@@ -15,17 +15,20 @@ helm init --service-account tiller
 
 ```
 curl -L https://git.io/getLatestIstio | sh -
-```
-## Download custom resource definition
+
+// version can be different as istio gets upgraded
+cd istio-*
+
+sudo mv -v bin/istioctl /usr/local/bin/
 
 ```
-wget https://raw.githubusercontent.com/istio/istio/release-1.0/install/kubernetes/helm/istio/templates/crds.yaml
+## Install istio CRD
 
 ```
-## Create Custom resource definition via kubectl
+helm install install/kubernetes/helm/istio-init --name istio-init --namespace istio-system
 
 ```
-kubectl create -f crds.yaml
+
 ```
 ##  Cd to downloaded istio directory and create a template using helm
 
@@ -33,6 +36,9 @@ kubectl create -f crds.yaml
 cd istio-1.3.0-rc.1
 
 helm template install/kubernetes/helm/istio --name istio --namespace istio-system --set sidecarInjectorWebhook.enabled=false > $HOME/istio.yaml
+
+
+helm install install/kubernetes/helm/istio --name istio --namespace istio-system --set global.configValidation=false --set sidecarInjectorWebhook.enabled=false --set grafana.enabled=true --set servicegraph.enabled=true
 
 ```
 ## create ns for istio
