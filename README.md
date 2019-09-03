@@ -21,6 +21,8 @@ cd istio-*
 
 sudo mv -v bin/istioctl /usr/local/bin/
 
+kubectl apply -f install/kubernetes/helm/helm-service-account.yaml
+
 ```
 ## Install istio CRD
 
